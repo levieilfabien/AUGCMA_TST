@@ -44,19 +44,18 @@ public class SC01Login extends SC00Modele {
 		
 		System.out.println(url);
 		
-		// Accès à google
+		// Accès à augcma
 		outil.chargerUrl(url);
 
 		// Attente de l'affichage du titre de la page
 		outil.attendreChargementPage(titre);
 
-		// Remplir l identite
-		// outil.action(Actions.SELECTIONNER, Cibles.SELECTION_CIVILITE_SAMY,
-		// "HOMME");
-		// outil.action(Actions.VIDER_ET_SAISIR, Cibles.SELECTION_NOM_SAMY,
-		// "LEMONSIEUR");
-		// outil.action(Actions.VIDER_ET_SAISIR, Cibles.SELECTION_PRENOM_SAMY,
-		// "KEVIN");
+		// Remplir l'identifiant
+		outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_IDENTIFIANT, Constantes.ID_AUGCMA);
+		outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_MOTDEPASSE, Constantes.PWD_AUGCMA);
+		
+		
+		outil.action(Actions.CLIQUER, Cibles.VALIDER_LOGIN);
 
 	}
 
