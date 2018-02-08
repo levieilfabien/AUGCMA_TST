@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>MODELE_TST</groupId>
-  <artifactId>MODELE_TST</artifactId>
+  <groupId>AUGCMA_TST</groupId>
+  <artifactId>AUGCMA_TST</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   	<name>Tests MODELE</name>
 	<description>Coquille de projet de test</description>
@@ -48,14 +48,14 @@
 			<version>4.12</version>
 		</dependency>
 		<!-- <dependency> <groupId>TAG_TST</groupId> <artifactId>TAG_TST</artifactId> 
-			<version>0.1.0-SNAPSHOT</version> </dependency> -->
+			<version>0.1.0-SNAPSHOT</version> </dependency> 
 		<dependency>
 			<groupId>DIVER_SQL</groupId>
 			<artifactId>sqljdbc42</artifactId>
 			<version>42</version>
 			<scope>system</scope>
 			<systemPath>C:\work\driver\sqljdbc_4.2\fra\sqljdbc42.jar</systemPath>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>TAG_TST</groupId>
 			<artifactId>TAG_TST</artifactId>
