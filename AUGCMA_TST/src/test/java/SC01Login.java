@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 
 import constantes.Actions;
 import exceptions.SeleniumException;
-import main.bean.CasEssaiModeleBean;
+import main.bean.CasEssaiAugcmaBean;
 import main.constantes.Cibles;
 import main.constantes.Constantes;
 import moteurs.FirefoxImpl;
@@ -26,7 +26,7 @@ public class SC01Login extends SC00Modele {
        public void accesTest() throws SeleniumException {
               
               //Description du scénario
-              CasEssaiModeleBean scenario0 = new CasEssaiModeleBean();
+              CasEssaiAugcmaBean scenario0 = new CasEssaiAugcmaBean();
               
               ///////////////////////////////////////////////////Configuration////////////////////////////////////////////////
            SeleniumOutils outil = obtenirDriver(scenario0);          

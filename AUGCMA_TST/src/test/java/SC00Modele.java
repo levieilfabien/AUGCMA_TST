@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.internal.ProfilesIni;
 
 import beans.CasEssaiBean;
 import exceptions.SeleniumException;
-import main.bean.CasEssaiModeleBean;
+import main.bean.CasEssaiAugcmaBean;
 import main.constantes.Constantes;
 import moteurs.FirefoxImpl;
 import moteurs.GenericDriver;
@@ -182,7 +182,7 @@ public class SC00Modele extends CasEssaiBean {
 	 * @param scenario0 le scenario concerne.
 	 * @return la boite a outil Selenium associee au scenario.
 	 */
-	public SeleniumOutils obtenirDriver(CasEssaiModeleBean scenario0) {
+	public SeleniumOutils obtenirDriver(CasEssaiAugcmaBean scenario0) {
 		//Configuration du driver
 		FirefoxBinary ffBinary = new FirefoxBinary(new File(Constantes.EMPLACEMENT_FIREFOX));
 		FirefoxProfile profile = configurerProfilNatixis();

@@ -7,17 +7,25 @@ import beans.CasEssaiBean;
  * @author levieilfa
  *
  */
-public class CasEssaiModeleBean extends CasEssaiBean {
+public class CasEssaiAugcmaBean extends CasEssaiBean {
 
 	/**
 	 * Id de sérialisation.
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Elements dossier AUGCMA
+	 */
+	private static final String numero_dossier = "41102478031100";
+	private static final String numero_iun = "3209020";
+	private static final String distributeur = "CE";
+
 
 	/**
 	 * Constructeur par défaut d'un scénario modèle.
 	 */
-	public CasEssaiModeleBean() {
+	public CasEssaiAugcmaBean() {
 		super();
 	}
 }
