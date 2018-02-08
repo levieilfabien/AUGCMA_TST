@@ -15,11 +15,19 @@ public class CasEssaiAugcmaBean extends CasEssaiBean {
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Elements dossier AUGCMA
+	 * Dossier AUGCMA
 	 */
-	private static final String numero_dossier = "41102478031100";
-	private static final String numero_iun = "3209020";
-	private static final String distributeur = "CE";
+	private String numeroDossier = "41102478031100";
+	
+	/**
+	 * IUN du client
+	 */
+	private String numeroIUN = "3209020";
+	
+	/**
+	 * Distributeur concerné
+	 */
+	private String distributeur = "CE";
 
 
 	/**
@@ -28,4 +36,35 @@ public class CasEssaiAugcmaBean extends CasEssaiBean {
 	public CasEssaiAugcmaBean() {
 		super();
 	}
+
+
+	public String getNumeroDossier() {
+		return numeroDossier;
+	}
+
+
+	public void setNumeroDossier(String numeroDossier) {
+		this.numeroDossier = numeroDossier;
+	}
+
+
+	public String getNumeroIUN() {
+		return numeroIUN;
+	}
+
+
+	public void setNumeroIUN(String numeroIUN) {
+		this.numeroIUN = numeroIUN;
+	}
+
+
+	public String getDistributeur() {
+		return distributeur;
+	}
+
+
+	public void setDistributeur(String distributeur) {
+		this.distributeur = distributeur;
+	}
+	
 }
