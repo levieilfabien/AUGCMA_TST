@@ -24,7 +24,7 @@ public class Constantes {
 	public static final String URL_APP_AUGCMA = PropertiesOutil.getInfoConstante("URL_AUGCMA");
 	public static final String ID_UNITED = PropertiesOutil.getInfoConstante("UNITED.login");
 	public static final String PWD_UNITED = PropertiesOutil.getInfoConstante("UNITED.password");
-	public static final String TITRE_PAGE_AUGCMA = "nxs - Augmentation de CMA - BL ${baseline number}";
+	public static final String TITRE_PAGE_AUGCMA = "nxs - Augmentation de CMA - BL ${baseline.number}";
 	
 	public static final String ID_AUGCMA = PropertiesOutil.getInfoConstante("AUGCMA.login");
 	public static final String PWD_AUGCMA = PropertiesOutil.getInfoConstante("AUGCMA.password");

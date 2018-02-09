@@ -2,8 +2,10 @@ package test.java;
 
 import org.junit.Test;
 
+import constantes.Actions;
 import exceptions.SeleniumException;
 import main.bean.CasEssaiAugcmaBean;
+import main.constantes.Cibles;
 import main.constantes.Constantes;
 import outils.SeleniumOutils;
 
