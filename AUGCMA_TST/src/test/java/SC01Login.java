@@ -23,8 +23,11 @@ public class SC01Login extends SC00Modele {
 		CasEssaiAugcmaBean scenario0 = new CasEssaiAugcmaBean();
 		
 		// Valorisation des données
-		scenario0.setNumeroDossier("41102478031100");
-		scenario0.setNumeroIUN("3209020");
+		//scenario0.setNumeroDossier("41102478031100");
+		//scenario0.setNumeroIUN("3209020");
+		//scenario0.setDistributeur("CE");
+		scenario0.setNumeroDossier("41000326032100");
+		scenario0.setNumeroIUN("3108391");
 		scenario0.setDistributeur("CE");
 
 		/////////////////////////////////////////////////// Configuration////////////////////////////////////////////////
@@ -58,7 +61,15 @@ public class SC01Login extends SC00Modele {
 		
 		
 		outil.action(Actions.CLIQUER, Cibles.VALIDER_LOGIN);
+		
+		
+		//Annuler undossier déjà existant
+		
+		//Nouvelle instruction
+		outil.action(Actions.CLIQUER, Cibles.NOUVELLE_INSTRUCTION);
 
+		//Nouvelle instruction
+		outil.action(Actions.CLIQUER, Cibles.NOUVELLE_INSTRUCTION);
 	}
 
 }

@@ -31,5 +31,11 @@ public class Cibles {
 	public static final CibleBean VALIDER_LOGIN = new CibleBean(Clefs.VALEUR, "Valider");
 	
 	
+	// Nouvelle instruction
+	/**
+	 * Bouton de démarrage d'une nouvelle instruction.
+	 */
+	public static final CibleBean NOUVELLE_INSTRUCTION = new CibleBean(Clefs.NAME, "majClientForm:instruireNouveauDossier");
+	
 	
 }
