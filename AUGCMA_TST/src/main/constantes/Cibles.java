@@ -37,5 +37,10 @@ public class Cibles {
 	 */
 	public static final CibleBean NOUVELLE_INSTRUCTION = new CibleBean(Clefs.NAME, "majClientForm:instruireNouveauDossier");
 	
+	/**
+	 * Bouton de soumission des données clients
+	 */
+	public static final CibleBean BOUTON_SOUMETTRE_DONNEES_CLIENTS = new CibleBean(Clefs.NAME, "majClientForm:soumettreDonneeSubmit");
+	
 	
 }
