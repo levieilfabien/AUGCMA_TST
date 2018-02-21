@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import constantes.Actions;
 import exceptions.SeleniumException;
-import main.bean.CasEssaiAugcmaBean;
 import main.constantes.Cibles;
 import main.constantes.Constantes;
 import outils.SeleniumOutils;
@@ -20,51 +19,22 @@ public class SC01Login extends SC00Modele {
 	public void accesTest() throws SeleniumException {
 
 		// Description du scénario
-		CasEssaiAugcmaBean scenario0 = new CasEssaiAugcmaBean();
+		///CasEssaiAugcmaBean scenario0 = new CasEssaiAugcmaBean();
 		
 		// Valorisation des données
-		//scenario0.setNumeroDossier("41102478031100");
-		//scenario0.setNumeroIUN("3209020");
-		//scenario0.setDistributeur("CE");
-		scenario0.setNumeroDossier("41000326032100");
-		scenario0.setNumeroIUN("3108391");
-		scenario0.setDistributeur("CE");
+		setNumeroDossier("41000326032100");
+		setNumeroIUN("3108391");
+		setDistributeur("CE");
 
 		/////////////////////////////////////////////////// Configuration////////////////////////////////////////////////
-		SeleniumOutils outil = obtenirDriver(scenario0);
+		SeleniumOutils outil = obtenirDriver(this);
 
 		/////////////////////////////////////////////////// EXECUTION////////////////////////////////////////////////
-		//String url = Constantes.URL_APP_AUGCMA;
-		//String titre = Constantes.TITRE_PAGE_AUGCMA;
+		// Accès à AUG CMA
+		accesAugCma(outil);
 
-		
-		// Remplissage de l'URL
-		//distributeur=[DISTRIBUTEUR]&iup=102769F&iun=[IUN]&mdpCommercial=[MDPUNITED]&idCommercial=[IDUNITED]&numContrat=[CONTRAT]&Profile=SAVCCO_OCT_I
-		
-		//url = url.replace("[DISTRIBUTEUR]", scenario0.getDistributeur());
-		//url = url.replace("[IUN]", scenario0.getNumeroIUN());
-		//url = url.replace("[CONTRAT]", scenario0.getNumeroDossier());
-		//url = url.replace("[IDUNITED]", Constantes.ID_UNITED);
-		//url = url.replace("[MDPUNITED]", Constantes.PWD_UNITED);
-		
-		//System.out.println(url);
-		
-		// Accès à augcma
-		//outil.chargerUrl(url);
-
-		// Attente de l'affichage du titre de la page
-		//outil.attendreChargementPage(titre);
-
-		// Remplir l'identifiant
-		outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_IDENTIFIANT, Constantes.ID_AUGCMA);
-		outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_MOTDEPASSE, Constantes.PWD_AUGCMA);
-		
-		
-		outil.action(Actions.CLIQUER, Cibles.VALIDER_LOGIN);
-		
-	}		
-		
-		public void continuationTest() throws SeleniumException {
+		// S'identifier sur l'appliation
+		identificationAugCma(outil);
 		
 		////// SI DOSSIER DEJA EXISTANT /////////
 		//Annuler un dossier déjà existant
@@ -80,10 +50,12 @@ public class SC01Login extends SC00Modele {
 			//Sélectionner motif d'annulation
 			outil.action(Actions.CLIQUER, Cibles.VALIDER_ANNULATION);
 			
-			
-		}
-		
-		
+			// Accès à AUG CMA
+			accesAugCma(outil);
+
+			// S'identifier sur l'appliation
+			identificationAugCma(outil);
+		}	
 		
 		///// SI AUCUN DOSSIER EN COURS /////////
 		// Attendre la présence d'un élément

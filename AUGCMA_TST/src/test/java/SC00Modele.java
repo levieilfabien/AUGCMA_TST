@@ -7,8 +7,10 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 
 import beans.CasEssaiBean;
+import constantes.Actions;
 import exceptions.SeleniumException;
 import main.bean.CasEssaiAugcmaBean;
+import main.constantes.Cibles;
 import main.constantes.Constantes;
 import moteurs.FirefoxImpl;
 import moteurs.GenericDriver;
@@ -16,7 +18,7 @@ import outils.ALMOutils;
 import outils.SeleniumOutils;
 import outils.XLSOutils;
 
-public class SC00Modele extends CasEssaiBean {
+public class SC00Modele extends CasEssaiAugcmaBean {
 	
 	/**
 	 * Id de serialisation.
@@ -205,7 +207,24 @@ public class SC00Modele extends CasEssaiBean {
 		return outil;
 	}
 	
-	public String accesAugCma(SeleniumOutils outil) throws SeleniumException {
+	/**
+	 * Fonction de login à l'application AUG CMA.
+	 * @param outil la boite à outil
+	 * @throws SeleniumException en cas d'erreur.
+	 */
+	public void identificationAugCma(SeleniumOutils outil) throws SeleniumException {
+		// Remplir l'identifiant et validation
+		outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_IDENTIFIANT, Constantes.ID_AUGCMA);
+		outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_MOTDEPASSE, Constantes.PWD_AUGCMA);
+		outil.action(Actions.CLIQUER, Cibles.VALIDER_LOGIN);
+	}
+	
+	/**
+	 * Fonction d'accès à l'IHM
+	 * @param outil l'outil de manipulation selenium
+	 * @throws SeleniumException en cas d'erreur
+	 */
+	public void accesAugCma(SeleniumOutils outil) throws SeleniumException {
 		
 
 		/////////////////////////////////////////////////// Configuration////////////////////////////////////////////////
@@ -215,9 +234,9 @@ public class SC00Modele extends CasEssaiBean {
 		// Remplissage de l'URL
 		//distributeur=[DISTRIBUTEUR]&iup=102769F&iun=[IUN]&mdpCommercial=[MDPUNITED]&idCommercial=[IDUNITED]&numContrat=[CONTRAT]&Profile=SAVCCO_OCT_I
 				
-		url = url.replace("[DISTRIBUTEUR]", scenario0.getDistributeur());
-		url = url.replace("[IUN]", scenario0.getNumeroIUN());
-		url = url.replace("[CONTRAT]", scenario0.getNumeroDossier());
+		url = url.replace("[DISTRIBUTEUR]", getDistributeur());
+		url = url.replace("[IUN]", getNumeroIUN());
+		url = url.replace("[CONTRAT]", getNumeroDossier());
 		url = url.replace("[IDUNITED]", Constantes.ID_UNITED);
 		url = url.replace("[MDPUNITED]", Constantes.PWD_UNITED);
 				
@@ -228,8 +247,6 @@ public class SC00Modele extends CasEssaiBean {
 		
 		// Attente de l'affichage du titre de la page
 		outil.attendreChargementPage(titre);
-
-		return "OK";
 	}	
 	
 }
