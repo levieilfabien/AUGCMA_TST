@@ -65,7 +65,8 @@ public class SC01Login extends SC00Modele {
 		
 		//Annuler undossier déjà existant
 		
-		outil.attendreChargementElementViaCondition(Cibles.BOUTON_SOUMETTRE_DONNEES_CLIENTS);
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_SOUMETTRE_DONNEES_CLIENTS);
 		
 		//Nouvelle instruction
 		outil.action(Actions.CLIQUER, Cibles.NOUVELLE_INSTRUCTION);
