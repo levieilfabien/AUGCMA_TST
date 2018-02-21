@@ -31,6 +31,25 @@ public class Cibles {
 	public static final CibleBean VALIDER_LOGIN = new CibleBean(Clefs.VALEUR, "Valider");
 	
 	
+	// Nouvelle instruction avec simulation deja en cours
+	
+	/**
+	 * Bouton d'annulation de simulation.
+	 */
+	public static final CibleBean METTRE_SANS_SUITE = new CibleBean(Clefs.NAME, "majClientForm:mettreSsSuite");
+	
+	/**
+	 * Bouton radio motif annulation
+	 */
+	public static final CibleBean MOTIF_ANNULATION = new CibleBean(Clefs.VALEUR, "Agence");
+	
+	/**
+	 * Bouton validation annulation
+	 */
+	public static final CibleBean VALIDER_ANNULATION = new CibleBean(Clefs.VALEUR, "Valider");
+	
+	
+	
 	// Nouvelle instruction
 	/**
 	 * Bouton de démarrage d'une nouvelle instruction.
@@ -42,5 +61,21 @@ public class Cibles {
 	 */
 	public static final CibleBean BOUTON_SOUMETTRE_DONNEES_CLIENTS = new CibleBean(Clefs.NAME, "majClientForm:soumettreDonneeSubmit");
 	
+	
+	//Remplir éléments cadre propositions
+	/**
+	 * Sélection Champ "Augmentation suite à"
+	 */
+	public static final CibleBean SELECTION_CHAMP_AUGSUITEA = new CibleBean(Clefs.NAME, "majClientForm:augmentationLabel:augmentationText");
+	/**
+	 * Sélection Valeur "Augmentation suite à"
+	 */
+	public static final CibleBean VALEUR_CHAMP_AUGSUITEA = new CibleBean(Clefs.VALEUR, "OR1");
+	
+	// Validation de la proposition
+	/**
+	 * Bouton de soumission des données clients
+	 */
+	public static final CibleBean BOUTON_SOUMETTRE_PROPOSITION = new CibleBean(Clefs.NAME, "majClientForm:simulerSubmit");
 	
 }

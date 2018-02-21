@@ -28,4 +28,7 @@ public class Constantes {
 	
 	public static final String ID_AUGCMA = PropertiesOutil.getInfoConstante("AUGCMA.login");
 	public static final String PWD_AUGCMA = PropertiesOutil.getInfoConstante("AUGCMA.password");
+	
+	/////////////////////////////////////////////////// VALEURS BLOC PROPOSITION ////////////////////////////////////////////////////////////////////
+	public static final String VALEUR_CHAMP_AUGSUITEA = "OR1";
 }
