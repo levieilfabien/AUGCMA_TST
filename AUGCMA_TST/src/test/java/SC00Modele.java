@@ -1,6 +1,7 @@
 package test.java;
 
 import java.io.File;
+import java.util.HashMap;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -194,12 +195,14 @@ public class SC00Modele extends CasEssaiAugcmaBean {
 		//Configuration du driver
 		ChromeOptions option = new ChromeOptions();
 		option.setExperimentalOption("useAutomationExtension", false);
-		option.setExperimentalOption("profile.default_content_settings.popups", 0);
+		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+		chromePrefs.put("profile.default_content_settings.popups", 0);
 		if (scenario0.getRepertoireTelechargement() == null) { 
 			File repertoireTelechargement = new File(".\\" + scenario0.getNomCasEssai());
 			repertoireTelechargement.mkdir();
-			option.setExperimentalOption("download.default_directory", repertoireTelechargement.getAbsolutePath());
+			chromePrefs.put("download.default_directory", repertoireTelechargement.getAbsolutePath());
 		}
+		option.setExperimentalOption("prefs", chromePrefs);
 		option.setBinary(Constantes.EMPLACEMENT_CHROME);
 
 //		if (scenario0.getRepertoireTelechargement() == null) { 
