@@ -165,19 +165,19 @@ public class SC00Modele extends CasEssaiAugcmaBean {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// FONCTION COMMUNES :
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public String accesGoogle(SeleniumOutils outil) throws SeleniumException {
+	//public String accesGoogle(SeleniumOutils outil) throws SeleniumException {
 		
-		String url = Constantes.URL_GOOGLE;
-		String titre = Constantes.TITRE_PAGE;
+		//String url = Constantes.URL_GOOGLE;
+		//String titre = Constantes.TITRE_PAGE;
 
 		// Accès à google
-		outil.chargerUrl(url);
+		//outil.chargerUrl(url);
 		
 		// Attente de l'affichage du titre de la page
-		outil.attendreChargementPage(titre);
+		//outil.attendreChargementPage(titre);
 
-		return "OK";
-	}
+		//return "OK";
+	//}
 	
 	/**
 	 * Permet d'obtenir la boite a outil Selenium associe a un driver pour le scenario donne.
@@ -196,9 +196,9 @@ public class SC00Modele extends CasEssaiAugcmaBean {
 		}
 		// Initialisation du driver
 		//FirefoxImpl driver = new FirefoxImpl(ffBinary, profile);
-		FirefoxImpl driver = new FirefoxImpl(profile);
+		FirefoxImpl driver = new FirefoxImpl(ffBinary, profile);
 		
-		driver.get(Constantes.URL_GOOGLE);
+		driver.get(Constantes.URL_APP_AUGCMA);
 
 		
 	    SeleniumOutils outil = new SeleniumOutils(driver, GenericDriver.FIREFOX_IMPL);

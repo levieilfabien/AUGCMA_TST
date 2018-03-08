@@ -14,6 +14,9 @@ public class Constantes {
 	public static final String EMPLACEMENT_PROFIL = PropertiesOutil.getInfoConstante("EMPLACEMENT_PROFILE");
 	public static final String EMPLACEMENT_GECKO =  System.setProperty("webdriver.gecko.driver", PropertiesOutil.getInfoConstante("EMPLACEMENT_GECKO"));
 	public static final String EMPLACEMENT_LIASSE = PropertiesOutil.getInfoConstante("EMPLACEMENT_LIASSE");
+	public static final String EMPLACEMENT_CHROME = PropertiesOutil.getInfoConstante("EMPLACEMENT_CHROME");
+	public static final String EMPLACEMENT_CHROME_DRIVER = System.setProperty("webdriver.chrome.driver", PropertiesOutil.getInfoConstante("EMPLACEMENT_CHROME_DRIVER"));
+	
 	////////////////////////////////////////////////////INFORMATIONS POUR LES PREFERENCES ////////////////////////////////////////////////////////////
 	public static final String PREF_FIREFOX_REPERTOIRE_TELECHARGEMENT = "browser.download.dir";
 	
