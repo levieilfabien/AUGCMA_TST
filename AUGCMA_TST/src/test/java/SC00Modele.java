@@ -190,13 +190,20 @@ public class SC00Modele extends CasEssaiAugcmaBean {
 	 * @return la boite a outil Selenium associee au scenario.
 	 */
 	public SeleniumOutils obtenirDriverChrome(CasEssaiAugcmaBean scenario0) {
+
 		//Configuration du driver
 		ChromeOptions option = new ChromeOptions();
 		option.setExperimentalOption("useAutomationExtension", false);
+		option.setExperimentalOption("profile.default_content_settings.popups", 0);
+		if (scenario0.getRepertoireTelechargement() == null) { 
+			File repertoireTelechargement = new File(".\\" + scenario0.getNomCasEssai());
+			repertoireTelechargement.mkdir();
+			option.setExperimentalOption("download.default_directory", repertoireTelechargement.getAbsolutePath());
+		}
 		option.setBinary(Constantes.EMPLACEMENT_CHROME);
 
 //		if (scenario0.getRepertoireTelechargement() == null) { 
-//			String repertoire = creerRepertoireTelechargement(scenario0, profile);
+//			String repertoire = creerRepertoireTelechargement(scenario0, repertoireTelechargement.getAbsolutePath());
 //			scenario0.setRepertoireTelechargement(repertoire);
 //			this.setRepertoireTelechargement(repertoire);
 //		}
