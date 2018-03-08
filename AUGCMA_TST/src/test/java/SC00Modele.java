@@ -2,9 +2,12 @@ package test.java;
 
 import java.io.File;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import beans.CasEssaiBean;
 import constantes.Actions;
@@ -12,6 +15,7 @@ import exceptions.SeleniumException;
 import main.bean.CasEssaiAugcmaBean;
 import main.constantes.Cibles;
 import main.constantes.Constantes;
+import moteurs.ChromeImpl;
 import moteurs.FirefoxImpl;
 import moteurs.GenericDriver;
 import outils.ALMOutils;
@@ -178,6 +182,36 @@ public class SC00Modele extends CasEssaiAugcmaBean {
 
 		//return "OK";
 	//}
+	
+
+	/**
+	 * Permet d'obtenir la boite a outil Selenium associe a un driver pour le scenario donne.
+	 * @param scenario0 le scenario concerne.
+	 * @return la boite a outil Selenium associee au scenario.
+	 */
+	public SeleniumOutils obtenirDriverChrome(CasEssaiAugcmaBean scenario0) {
+		//Configuration du driver
+		ChromeOptions option = new ChromeOptions();
+		option.setExperimentalOption("useAutomationExtension", false);
+		option.setBinary(Constantes.EMPLACEMENT_CHROME);
+
+//		if (scenario0.getRepertoireTelechargement() == null) { 
+//			String repertoire = creerRepertoireTelechargement(scenario0, profile);
+//			scenario0.setRepertoireTelechargement(repertoire);
+//			this.setRepertoireTelechargement(repertoire);
+//		}
+		// Initialisation du driver
+		//FirefoxImpl driver = new FirefoxImpl(ffBinary, profile);
+		ChromeImpl driver = new ChromeImpl(option);;
+		
+		driver.get(Constantes.URL_APP_AUGCMA);
+
+		
+	    SeleniumOutils outil = new SeleniumOutils(driver, GenericDriver.CHROME_IMPL);
+	    outil.setRepertoireRacine(scenario0.getRepertoireTelechargement());
+		
+		return outil;
+	}
 	
 	/**
 	 * Permet d'obtenir la boite a outil Selenium associe a un driver pour le scenario donne.
