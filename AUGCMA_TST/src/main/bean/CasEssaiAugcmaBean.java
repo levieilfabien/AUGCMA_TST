@@ -29,7 +29,6 @@ public class CasEssaiAugcmaBean extends CasEssaiBean {
 	 */
 	private String distributeur = "CE";
 
-
 	/**
 	 * Constructeur par défaut d'un scénario modèle.
 	 */

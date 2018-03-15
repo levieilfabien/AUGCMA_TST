@@ -34,4 +34,6 @@ public class Constantes {
 	
 	/////////////////////////////////////////////////// VALEURS BLOC PROPOSITION ////////////////////////////////////////////////////////////////////
 	public static final String VALEUR_CHAMP_AUGSUITEA = "OR1";
+	public static final String VALEUR_MONTANT_FIN_UN = "";
+	public static final String VALEUR_MONTANT_FIN_DEUX = "1000";
 }

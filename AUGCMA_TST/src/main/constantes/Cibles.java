@@ -68,14 +68,48 @@ public class Cibles {
 	 */
 	public static final CibleBean SELECTION_CHAMP_AUGSUITEA = new CibleBean(Clefs.NAME, "majClientForm:augmentationLabel:augmentationText");
 	/**
-	 * Sélection Valeur "Augmentation suite à"
+	 *Remplir Valeur "Montant du financement souhaité"
 	 */
-	public static final CibleBean VALEUR_CHAMP_AUGSUITEA = new CibleBean(Clefs.VALEUR, "OR1");
+	public static final CibleBean SAISIE_MONTANT_FIN_SOUHAITE = new CibleBean(Clefs.ID, "majClientForm:mntFinanceLabel:mntFinanceText");
+
 	
 	// Validation de la proposition
 	/**
 	 * Bouton de soumission des données clients
 	 */
 	public static final CibleBean BOUTON_SOUMETTRE_PROPOSITION = new CibleBean(Clefs.NAME, "majClientForm:simulerSubmit");
+	
+	// Validation de la proposition
+	/**
+	 * Bouton de soumission des données clients
+	 */
+	public static final CibleBean BOUTON_VALIDER_CONTRAT = new CibleBean(Clefs.NAME, "majClientForm:validerContratCreditSubmit");
+	
+	/**
+	 *Remplir Valeur "Augmentation suite à"
+	 */
+	public static final CibleBean SAISIE_MONTANT_FIN = new CibleBean(Clefs.ID, "augCMAEditionForm:mntFinanceLabel:mntFinanceText");
+	
+	// Demande édition liasses
+	/**
+	 * Bouton de soumission des données clients
+	 */
+	public static final CibleBean BOUTON_EDITION_CONTRAT = new CibleBean(Clefs.NAME, "augCMAEditionForm:editer");
+	
+	// Demande édition liasses
+	/**
+	 * Bouton de soumission des données clients
+	 */
+	public static final CibleBean BOUTON_ETUDE_DOSSIER = new CibleBean(Clefs.NAME, "augCMAEditionForm:passerEtudeEdit");
+	
+	
+	// Demande édition liasses
+	/**
+	 * Bouton de soumission des données clients
+	 */
+		public static final CibleBean BOUTON_FERMER_APPLICATION = new CibleBean(Clefs.NAME, "formReceptionDossier:boutonFermer");
+	
+	
+	
 	
 }
