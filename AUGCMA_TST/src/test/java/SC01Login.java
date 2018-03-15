@@ -88,18 +88,18 @@ public class SC01Login extends SC00Modele {
 		outil.action(Actions.CLIQUER, Cibles.BOUTON_SOUMETTRE_PROPOSITION);
 		
 		//Remplir le champs "Montant du financement souhaité"
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.SAISIE_MONTANT_FIN_SOUHAITE);
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_VALIDER_CONTRAT);
 		//outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_MONTANT_FIN_SOUHAITE, Constantes.VALEUR_MONTANT_FIN_UN);
 		outil.saisieInstantanee(Cibles.SAISIE_MONTANT_FIN_SOUHAITE, Constantes.VALEUR_MONTANT_FIN_UN);
 		
 		
 
 		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_VALIDER_CONTRAT);
+		//outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_VALIDER_CONTRAT);
 		//Valider la proposition en contrat de crédit
 		outil.action(Actions.CLIQUER, Cibles.BOUTON_VALIDER_CONTRAT);
 		
-		System.exit(0);
+		//System.exit(0);
 		
 		///////	PAGE EDITION LIASSE - STATUT VALD ////////////////
 		
