@@ -38,24 +38,24 @@ public class SC01Login extends SC00Modele {
 		
 		////// SI DOSSIER DEJA EXISTANT /////////
 		//Annuler un dossier déjà existant
-		//if(outil.testerPresenceElementDiffere(Cibles.METTRE_SANS_SUITE)) {
-		//	outil.action(Actions.CLIQUER, Cibles.METTRE_SANS_SUITE);
+		if(outil.testerPresenceElementDiffere(Cibles.METTRE_SANS_SUITE)) {
+			outil.action(Actions.CLIQUER, Cibles.METTRE_SANS_SUITE);
 			
 			//Sélectionner motif d'annulation
-		//	outil.action(Actions.CLIQUER, Cibles.MOTIF_ANNULATION);
+			outil.action(Actions.CLIQUER, Cibles.MOTIF_ANNULATION);
 			
 			// Attente disponibilite bouton valider
-		//	outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.VALIDER_ANNULATION);
+			outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.VALIDER_ANNULATION);
 			
 			//Sélectionner motif d'annulation
-		//	outil.action(Actions.CLIQUER, Cibles.VALIDER_ANNULATION);
+			outil.action(Actions.CLIQUER, Cibles.VALIDER_ANNULATION);
 			
 			// Accès à AUG CMA
-		//	accesAugCma(outil);
+			accesAugCma(outil);
 
 			// S'identifier sur l'appliation
-		//	identificationAugCma(outil);
-		//}	
+			//identificationAugCma(outil);
+		}	
 		
 		///// SI AUCUN DOSSIER EN COURS /////////
 		// Attendre la présence d'un élément
@@ -99,7 +99,7 @@ public class SC01Login extends SC00Modele {
 		//Valider la proposition en contrat de crédit
 		outil.action(Actions.CLIQUER, Cibles.BOUTON_VALIDER_CONTRAT);
 		
-		//System.exit(0);
+		
 		
 		///////	PAGE EDITION LIASSE - STATUT VALD ////////////////
 		
@@ -112,20 +112,71 @@ public class SC01Login extends SC00Modele {
 		//Valider la proposition en contrat de crédit
 		outil.action(Actions.CLIQUER, Cibles.BOUTON_EDITION_CONTRAT);
 		
+		////////// RECHARGEMENT DE LA PAGE ///////////////////////
+		
+		// Accès à AUG CMA
+		accesAugCma(outil);
+		
+		
+		
 		///////	PAGE EDITION LIASSE - STATUT EDIT ////////////////
 		// Attendre la présence d'un élément
 		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_ETUDE_DOSSIER);
 		//Valider la proposition en contrat de crédit
 		outil.action(Actions.CLIQUER, Cibles.BOUTON_ETUDE_DOSSIER);
-		
+		//System.exit(0);
 		///////	PAGE EDITION LIASSE -POPUP- STATUT ETUD ////////////////
 		// Attendre la présence d'un élément
 		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_FERMER_APPLICATION);
 		//Valider la proposition en contrat de crédit
 		outil.action(Actions.CLIQUER, Cibles.BOUTON_FERMER_APPLICATION);
 		
+		//////////RECHARGEMENT DE LA PAGE ///////////////////////
 		
-		//////////////RECUPERATION DE LIASSE//////////////////////////
+		// Accès à AUG CMA
+		accesAugCma(outil);
+		
+		
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_SOUMETTRE_DONNEES_OCTROI);
+		//Valider la proposition en contrat de crédit
+		outil.action(Actions.CLIQUER, Cibles.BOUTON_SOUMETTRE_DONNEES_OCTROI);
+		
+		
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.CALENDRIER_DATE_SIGNATURE);
+		//Valider la proposition en contrat de crédit
+		outil.action(Actions.CLIQUER, Cibles.CALENDRIER_DATE_SIGNATURE);
+		
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.SELECTION_DATE_SIGNATURE);
+		//Valider la proposition en contrat de crédit
+		outil.action(Actions.CLIQUER, Cibles.SELECTION_DATE_SIGNATURE);
+		
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_LIASSE_VALIDEE);
+		//Valider la proposition en contrat de crédit
+		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_LIASSE_VALIDEE);
+		
+		
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_FINANCEMENT_REFUS);
+		//Valider la proposition en contrat de crédit
+		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_FINANCEMENT_REFUS);
+				
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_VALIDATION_JUSTIFICATIF);
+		//Valider la proposition en contrat de crédit
+		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_VALIDATION_JUSTIFICATIF);
+				
+		// Attendre la présence d'un élément
+		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_DECISION_OCTROI_OK);
+		//Valider la proposition en contrat de crédit
+		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_DECISION_OCTROI_OK);
+		
+		outil.getDriver().quit();
+		
+
 	}
 
 }

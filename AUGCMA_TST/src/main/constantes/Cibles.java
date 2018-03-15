@@ -36,7 +36,8 @@ public class Cibles {
 	/**
 	 * Bouton d'annulation de simulation.
 	 */
-	public static final CibleBean METTRE_SANS_SUITE = new CibleBean(Clefs.NAME, "majClientForm:mettreSsSuite");
+	//public static final CibleBean METTRE_SANS_SUITE = new CibleBean(Clefs.NAME, "majClientForm:mettreSsSuite");
+	public static final CibleBean METTRE_SANS_SUITE = new CibleBean(Clefs.NAME, "form-octroi:sansSuiteBouton");
 	
 	/**
 	 * Bouton radio motif annulation
@@ -108,6 +109,56 @@ public class Cibles {
 	 * Bouton de soumission des données clients
 	 */
 		public static final CibleBean BOUTON_FERMER_APPLICATION = new CibleBean(Clefs.NAME, "formReceptionDossier:boutonFermer");
+	
+	// Demande octroi
+	/**
+	* Bouton de soumission des données clients
+	*/
+	public static final CibleBean BOUTON_SOUMETTRE_DONNEES_OCTROI = new CibleBean(Clefs.NAME, "form-octroi:soummettreBouton");
+	
+	
+	// Ouvrir calendrier
+		/**
+		* Bouton de soumission des données clients
+		*/
+		public static final CibleBean CALENDRIER_DATE_SIGNATURE = new CibleBean(Clefs.ID, "form-octroi:dateSignaturePopupButton");
+	
+	// Ouvrir calendrier
+	/**
+	* Bouton de soumission des données clients
+	*/
+	public static final CibleBean SELECTION_DATE_SIGNATURE = new CibleBean(Clefs.TEXTE_COMPLET, "Aujourd'hui");
+	
+	// Bouton radio liasse contractuelle validee OK
+		/**
+		* Bouton de soumission des données clients
+		*/
+		public static final CibleBean BOUTON_RADIO_LIASSE_VALIDEE = new CibleBean(Clefs.ID, "form-octroi:table-completude:0:j_id399279269_405869a9:0");
+		
+	// Bouton radio demande de financement KO
+	/**
+	 * Bouton de soumission des données clients
+	*/
+	public static final CibleBean BOUTON_RADIO_FINANCEMENT_REFUS = new CibleBean(Clefs.ID, "form-octroi:table-completude:1:j_id399279269_405869a9:1");
+	
+	
+	// Bouton radio justificatif vérifié
+		/**
+		 * Bouton de soumission des données clients
+		*/
+		public static final CibleBean BOUTON_RADIO_VALIDATION_JUSTIFICATIF = new CibleBean(Clefs.ID, "form-octroi:table-justificatifs:0:justifVerifie:0");
+		
+	
+		// Bouton radio justificatif vérifié
+				/**
+				 * Bouton de soumission des données clients
+				*/
+				public static final CibleBean BOUTON_RADIO_DECISION_OCTROI_OK = new CibleBean(Clefs.ID, "form-octroi:selectDecisionOK:0");
+				
+	
+		
+	
+	
 	
 	
 	
