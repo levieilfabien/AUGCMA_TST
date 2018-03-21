@@ -20,6 +20,10 @@ public class SC01Login extends SC00Modele {
 
 		// Description du scénario
 		///CasEssaiAugcmaBean scenario0 = new CasEssaiAugcmaBean();
+		this.setNomCasEssai("TNRSC01-" + getTime());
+		this.setDescriptif("TNRSC01 - AUG CMA - Octroi avec mise sans suite");
+		this.setIdConfluence("");
+		
 		
 		// Valorisation des données
 		setNumeroDossier("41000326032100");
@@ -29,154 +33,35 @@ public class SC01Login extends SC00Modele {
 		/////////////////////////////////////////////////// Configuration////////////////////////////////////////////////
 		SeleniumOutils outil = obtenirDriverChrome(this);
 
+		
+		
+		//try {
 		/////////////////////////////////////////////////// EXECUTION////////////////////////////////////////////////
-		// Accès à AUG CMA
-		accesAugCma(outil);
 
-		// S'identifier sur l'appliation
-		identificationAugCma(outil);
+		this.getTests().add(CT01AccesViaLoginAugCma(this, outil));
 		
-		////// SI DOSSIER DEJA EXISTANT /////////
-		//Annuler un dossier déjà existant
-		if(outil.testerPresenceElementDiffere(Cibles.METTRE_SANS_SUITE)) {
-			outil.action(Actions.CLIQUER, Cibles.METTRE_SANS_SUITE);
-			
-			//Sélectionner motif d'annulation
-			outil.action(Actions.CLIQUER, Cibles.MOTIF_ANNULATION);
-			
-			// Attente disponibilite bouton valider
-			outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.VALIDER_ANNULATION);
-			
-			//Sélectionner motif d'annulation
-			outil.action(Actions.CLIQUER, Cibles.VALIDER_ANNULATION);
-			
-			// Accès à AUG CMA
-			accesAugCma(outil);
+		this.getTests().add(CT02NouvelleInstruction(this, outil));
 
-			// S'identifier sur l'appliation
-			//identificationAugCma(outil);
-		}	
-		
-		///// SI AUCUN DOSSIER EN COURS /////////
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.NOUVELLE_INSTRUCTION);
-				
-		//Soumettre les données clients
-		outil.action(Actions.CLIQUER, Cibles.NOUVELLE_INSTRUCTION);
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_SOUMETTRE_DONNEES_CLIENTS);
-		//Soumettre les données clients
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_SOUMETTRE_DONNEES_CLIENTS);
-		
-		//Remplir le champs "Augmentation suite à"
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.SELECTION_CHAMP_AUGSUITEA);
-		outil.action(Actions.SELECTIONNER, Cibles.SELECTION_CHAMP_AUGSUITEA, Constantes.VALEUR_CHAMP_AUGSUITEA);
-		
-		//Remplir le champs "Montant du financement souhaité"
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.SAISIE_MONTANT_FIN_SOUHAITE);
-		//outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_MONTANT_FIN_SOUHAITE, Constantes.VALEUR_MONTANT_FIN_UN);
-		outil.saisieInstantanee(Cibles.SAISIE_MONTANT_FIN_SOUHAITE, Constantes.VALEUR_MONTANT_FIN_UN);
-		
-		
-		//Nouvelle instruction jboss
-		//outil.action(Actions.CLIQUER, Cibles.NOUVELLE_INSTRUCTION);
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_SOUMETTRE_PROPOSITION);
-		//Soumettre la proposition d'augmentation de CMA
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_SOUMETTRE_PROPOSITION);
-		
-		//Remplir le champs "Montant du financement souhaité"
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_VALIDER_CONTRAT);
-		//outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_MONTANT_FIN_SOUHAITE, Constantes.VALEUR_MONTANT_FIN_UN);
-		outil.saisieInstantanee(Cibles.SAISIE_MONTANT_FIN_SOUHAITE, Constantes.VALEUR_MONTANT_FIN_UN);
-		
-		
+		this.getTests().add(CT03NouvelleProposition(this, outil));
 
-		// Attendre la présence d'un élément
-		//outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_VALIDER_CONTRAT);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_VALIDER_CONTRAT);
+		this.getTests().add(CT04EditionLiasse(this, outil));
+
+		this.getTests().add(CT05EtudeDossier(this, outil));
+
+		this.getTests().add(CT06OctroiDossier(this, outil));
 		
 		
-		
-		///////	PAGE EDITION LIASSE - STATUT VALD ////////////////
-		
-		//Remplir le champs "Montant du financement souhaité"
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.SAISIE_MONTANT_FIN);
-		outil.action(Actions.VIDER_ET_SAISIR, Cibles.SAISIE_MONTANT_FIN, Constantes.VALEUR_MONTANT_FIN_DEUX);
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_EDITION_CONTRAT);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_EDITION_CONTRAT);
-		
-		////////// RECHARGEMENT DE LA PAGE ///////////////////////
-		
-		// Accès à AUG CMA
-		accesAugCma(outil);
-		
-		
-		
-		///////	PAGE EDITION LIASSE - STATUT EDIT ////////////////
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_ETUDE_DOSSIER);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_ETUDE_DOSSIER);
-		//System.exit(0);
-		///////	PAGE EDITION LIASSE -POPUP- STATUT ETUD ////////////////
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_FERMER_APPLICATION);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_FERMER_APPLICATION);
-		
-		//////////RECHARGEMENT DE LA PAGE ///////////////////////
-		
-		// Accès à AUG CMA
-		accesAugCma(outil);
-		
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_SOUMETTRE_DONNEES_OCTROI);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_SOUMETTRE_DONNEES_OCTROI);
-		
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.CALENDRIER_DATE_SIGNATURE);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.CALENDRIER_DATE_SIGNATURE);
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.SELECTION_DATE_SIGNATURE);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.SELECTION_DATE_SIGNATURE);
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_LIASSE_VALIDEE);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_LIASSE_VALIDEE);
-		
-		
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_FINANCEMENT_REFUS);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_FINANCEMENT_REFUS);
-				
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_VALIDATION_JUSTIFICATIF);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_VALIDATION_JUSTIFICATIF);
-				
-		// Attendre la présence d'un élément
-		outil.action(Actions.ATTENDRE_DISPONIBILITE_ELEMENT, Cibles.BOUTON_RADIO_DECISION_OCTROI_OK);
-		//Valider la proposition en contrat de crédit
-		outil.action(Actions.CLIQUER, Cibles.BOUTON_RADIO_DECISION_OCTROI_OK);
-		
+		//Fermer le naviguateur
 		outil.getDriver().quit();
 		
-
+//		} catch (SeleniumException ex) {
+//			// Finalisation en erreur du cas de test.
+//			finaliserTestEnErreur(outil, this, ex, this.getNomCasEssai() + this.getTime());
+//			throw ex;
+//		}
+		// Finalisation normale du cas de test.
+		finaliserTest(outil, this, this.getNomCasEssai() + this.getTime());
+				
 	}
 
 }
