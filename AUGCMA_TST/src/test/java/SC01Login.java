@@ -35,30 +35,25 @@ public class SC01Login extends SC00Modele {
 
 		
 		
-		//try {
+		try {
 		/////////////////////////////////////////////////// EXECUTION////////////////////////////////////////////////
 
 		this.getTests().add(CT01AccesViaLoginAugCma(this, outil));
-		
 		this.getTests().add(CT02NouvelleInstruction(this, outil));
-
 		this.getTests().add(CT03NouvelleProposition(this, outil));
-
 		this.getTests().add(CT04EditionLiasse(this, outil));
-
 		this.getTests().add(CT05EtudeDossier(this, outil));
-
 		this.getTests().add(CT06OctroiDossier(this, outil));
 		
 		
 		//Fermer le naviguateur
 		outil.getDriver().quit();
 		
-//		} catch (SeleniumException ex) {
-//			// Finalisation en erreur du cas de test.
-//			finaliserTestEnErreur(outil, this, ex, this.getNomCasEssai() + this.getTime());
-//			throw ex;
-//		}
+		} catch (SeleniumException ex) {
+			// Finalisation en erreur du cas de test.
+			finaliserTestEnErreur(outil, this, ex, this.getNomCasEssai() + this.getTime());
+			throw ex;
+		}
 		// Finalisation normale du cas de test.
 		finaliserTest(outil, this, this.getNomCasEssai() + this.getTime());
 				
