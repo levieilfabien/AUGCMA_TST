@@ -46,8 +46,6 @@ public class SC01Login extends SC00Modele {
 		this.getTests().add(CT06OctroiDossier(this, outil));
 		
 		
-		//Fermer le naviguateur
-		outil.getDriver().quit();
 		
 		} catch (SeleniumException ex) {
 			// Finalisation en erreur du cas de test.
