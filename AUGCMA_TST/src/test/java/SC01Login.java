@@ -22,7 +22,7 @@ public class SC01Login extends SC00Modele {
 		///CasEssaiAugcmaBean scenario0 = new CasEssaiAugcmaBean();
 		this.setNomCasEssai("TNRSC01-" + getTime());
 		this.setDescriptif("TNRSC01 - AUG CMA - Octroi avec mise sans suite");
-		this.setIdConfluence("");
+		this.setIdConfluence("112504503");
 		
 		
 		// Valorisation des données
